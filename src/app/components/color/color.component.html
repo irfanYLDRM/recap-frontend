@@ -1,0 +1,12 @@
+<table class="table border border-info">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Renk</td>
+        </tr>
+    </thead>
+    <tr *ngFor="let color of colors">
+        <td>{{color.colorId}}</td>
+        <td>{{color.colorName}}</td>
+    </tr>
+</table>
