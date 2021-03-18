@@ -1,12 +1,6 @@
-<table class="table border border-info">
-    <thead>
-        <tr>
-            <td>Id</td>
-            <td>Renk</td>
-        </tr>
-    </thead>
-    <tr *ngFor="let color of colors">
-        <td>{{color.colorId}}</td>
-        <td>{{color.colorName}}</td>
-    </tr>
-</table>
+<select class="form-select" size="10" aria-label="size 3 select example">
+    <option routerLink="" selected>Tüm Renkler</option>
+    <option (click)="setCurrentColor(color)" 
+            *ngFor="let color of colors" value="1">{{color.colorName}}</option>
+</select>
+<button routerLink = "/cars/color/{{currentColor.colorId}}" type="button" class="btn btn-success" style="width:100%">Filtrele</button>

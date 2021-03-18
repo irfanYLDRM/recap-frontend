@@ -1,16 +1,23 @@
-<table class="table border border-info">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Marka</th>
-            <th>Renk</th>
-            <th>Fiyat</th>
-        </tr>
-    </thead>
-    <tr *ngFor="let car of cars">
-        <td>{{car.carId}}</td>
-        <td>{{car.brandName}}</td>
-        <td>{{car.colorName}}</td>
-        <td>{{car.dailyPrice}}</td>
-    </tr>
-</table>
+<div class="mb-3">
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Ara..."
+            style="margin:20px 0 0 0">
+</div>
+
+<div class="row" >
+    <div class="col-md-4" *ngFor="let car of cars | filterPipe:filterText" style="margin:10px 0px">
+        <div class="row">
+            <img src="" alt="" style="width:100%;height:200px">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <p>{{car.brandName}}</p>
+                <p>{{car.colorName}}</p>
+            </div>
+            <div class="col-md-6">
+                <h2 style="text-align:right">{{car.dailyPrice | currency}}</h2>
+                <button type="button" class="btn btn-success" style="width:100%">Kirala</button>
+            </div>
+        </div>
+        <hr>
+    </div>
+</div>
