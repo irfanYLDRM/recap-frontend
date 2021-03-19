@@ -12,6 +12,7 @@ export class CarComponent implements OnInit {
 
   cars:Car[]=[];
   filterText="";
+  car:Car;
 
   constructor(private carService:CarService,
               private activatedRoute:ActivatedRoute) { }
@@ -44,5 +45,9 @@ export class CarComponent implements OnInit {
     this.carService.getCarsByBrand(brandId).subscribe(response=>{
       this.cars = response.data
     })
+  }
+
+  setRentalDetail(car:Car){
+    this.car=car
   }
 }

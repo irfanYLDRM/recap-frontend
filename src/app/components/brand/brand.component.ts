@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
 
@@ -11,6 +12,7 @@ export class BrandComponent implements OnInit {
 
   brands : Brand[]=[]
   currentBrand:Brand
+  router:string;
 
   constructor(private brandService:BrandService) { }
 
@@ -24,7 +26,12 @@ export class BrandComponent implements OnInit {
     })
   }
 
-  setCurrentBrand(brand:Brand){
-    this.currentBrand = brand
+  setCurrentBrand(brand?:Brand){
+    if(brand){
+      this.currentBrand = brand
+      this.router="/cars/brand/"+brand.brandId
+    }else{
+      this.router="/cars"
+    }
   }
 }

@@ -15,7 +15,7 @@
             </div>
             <div class="col-md-6">
                 <h2 style="text-align:right">{{car.dailyPrice | currency}}</h2>
-                <button type="button" class="btn btn-success" style="width:100%">Kirala</button>
+                <button (click)="setRentalDetail(car)" routerLink="/carrental/{{car}}" type="button" class="btn btn-success" style="width:100%">Kirala</button>
             </div>
         </div>
         <hr>

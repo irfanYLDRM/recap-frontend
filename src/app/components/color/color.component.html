@@ -1,6 +1,6 @@
-<select class="form-select" size="10" aria-label="size 3 select example">
-    <option routerLink="" selected>Tüm Renkler</option>
+<select class="form-select" size="9" aria-label="size 3 select example">
+    <option (click)="setCurrentColor()" selected>Tüm Renkler</option>
     <option (click)="setCurrentColor(color)" 
             *ngFor="let color of colors" value="1">{{color.colorName}}</option>
 </select>
-<button routerLink = "/cars/color/{{currentColor.colorId}}" type="button" class="btn btn-success" style="width:100%">Filtrele</button>
+<button routerLink = "{{router}}" type="button" class="btn btn-success" style="width:100%">Filtrele</button>

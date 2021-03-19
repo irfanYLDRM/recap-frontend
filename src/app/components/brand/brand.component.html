@@ -1,6 +1,6 @@
-<select class="form-select" size="10" aria-label="size 3 select example">
-    <option routerLink = "/cars" selected>Tüm Markalar</option>
+<select class="form-select" size="9"  aria-label="size 3 select example">
+    <option (click)="setCurrentBrand()" selected>Tüm Markalar</option>
     <option (click) = "setCurrentBrand(brand)" 
             *ngFor="let brand of brands" value="1">{{brand.brandName}}</option>
 </select>
-<button routerLink = "/cars/brand/{{currentBrand.brandId}}" type="button" class="btn btn-success" style="width:100%">Filtrele</button>
+<button routerLink = "{{router}}" type="button" class="btn btn-success" style="width:100%">Filtrele</button>

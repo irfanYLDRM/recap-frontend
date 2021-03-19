@@ -11,6 +11,7 @@ export class ColorComponent implements OnInit {
 
   colors : Color[]=[]
   currentColor : Color
+  router:string
 
   constructor(private colorService:ColorService) { }
 
@@ -24,7 +25,13 @@ export class ColorComponent implements OnInit {
     })
   }
 
-  setCurrentColor(color:Color){
-    this.currentColor=color
+  setCurrentColor(color?:Color){
+    if(color){
+      this.currentColor=color
+      this.router="cars/color/"+color.colorId
+    }else{
+      this.router="/cars"
+    }
+    
   }
 }
